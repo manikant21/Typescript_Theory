@@ -288,4 +288,57 @@ getUser().then((user) => {
 });
 
 
+Q. Why do we need to install types/node? What does it do?
+
+Ans-:Because Node.js is not built with TypeScript, and by default, TypeScript doesn't know about Node's global types like process, __dirname, Buffer, require, etc.
+What does @types/node do?
+It provides type definitions for all Node.js core modules — such as:
+
+fs, path, http, crypto, child_process, etc.
+
+Global variables like process, __dirname, setTimeout, etc.
+
+Q. Why do we need to install types/express? What does it do?
+Ans-:Because Express is originally written in JavaScript, and it doesn’t include TypeScript types by default.
+
+Q. What is the need for changing moduleresolution to es6?
+Ans-: Changing the moduleResolution to "ES6" (or "NodeNext" in newer setups) in a TypeScript project is sometimes necessary depending on how you import files and how your project is structured.
+
+Q. Import keyword is very similar to require keyword. What do you think?
+Ans-: Yes — on the surface, import and require seem similar because both are used to load modules in JavaScript/TypeScript. But they are quite different under the hood in terms of syntax, timing, and capabilities.
+
+Q. How to use import keyword?
+Ans-: The import keyword in TypeScript (and modern JavaScript) is used to bring in modules, objects, functions, or types from other files or packages.
+Ex-:// math.ts
+export default function add(a: number, b: number) {
+  return a + b;
+}
+
+// main.ts
+import add from './math';
+
+console.log(add(2, 3)); // 5
+
+Q. How does import { Router } from 'express'. work. What does { } this do?
+Ans-: Router is a named export from the express module
+import { Router } from 'express';
+
+The curly braces {} are used to destructure named exports from a module.
+// In express/index.d.ts or internally
+export declare function Router(): Router;
+export default express;
+
+Q. What do you mean by interface?Why do we have to create it for todos type?
+Ans-:An interface in TypeScript is used to define the structure of an object. It tells TypeScript what properties and types an object should have — almost like a contract for the object.
+
+interface Todo {
+  id: string;
+  name: string;
+}
+
+Q. What are named exports and default exports?
+Ans-: Named exports allow you to export multiple values from a file by name.
+// mathUtils.ts
+export const add = (a: number, b: number) => a + b;
+export const subtract = (a: number, b: number) => a - b;
 

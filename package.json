@@ -1,0 +1,32 @@
+{
+  "name": "typescript_threory",
+  "version": "1.0.0",
+  "description": "Q. What advantage does typescript gives us?Explain with example?\r Ans-: TypeScript provides type safety, better tooling, and cleaner, more maintainable code compared to plain JavaScript.\r Ex-:1. Static Type Checking\r function add(a: number, b: number): number {\r   return a + b;\r }",
+  "main": "dist/app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch src --exec tsx src/app.ts",
+    "start": "node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manikant21/Typescript_Theory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manikant21/Typescript_Theory/issues"
+  },
+  "homepage": "https://github.com/manikant21/Typescript_Theory#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.15",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}

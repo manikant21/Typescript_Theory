@@ -342,3 +342,26 @@ Ans-: Named exports allow you to export multiple values from a file by name.
 export const add = (a: number, b: number) => a + b;
 export const subtract = (a: number, b: number) => a - b;
 
+Q. What is type casting
+Ans-:Type casting in TypeScript is the process of explicitly telling the compiler to treat a value as a specific type.
+
+It's helpful when you're certain about the type of a value but TypeScript either doesn't know or infers it differently.
+
+ Why Use Type Casting?
+To:
+
+Avoid TypeScript type errors
+
+Access properties/methods safely
+
+Convert between types (especially from unknown, any, or DOM types)
+
+Q. What is the need of RequestBody and RequestParams?
+Ans-:In TypeScript with Express, RequestBody and RequestParams are used to clearly define the shape of the incoming data in your HTTP request.
+
+They help with:
+
+ Type safety
+ Autocompletion
+ Preventing bugs
+

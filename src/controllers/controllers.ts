@@ -1,5 +1,9 @@
 import { Request, Response } from "express";
 
+type requestBody = {
+    name: string
+}
+
 interface Box {
     id: String,
     name: String
@@ -12,16 +16,17 @@ export const getResponse = (req: Request, res: Response) : void=> {
 }
 
 export const deleteName = (req: Request, res: Response) => {
-    let name = req.body.name;
-    todo= todo.filter((user: Box )=> user.name != name)
+    let body = req.body as requestBody;
+    todo= todo.filter((user: Box )=> user.name != body.name)
     res.status(200).json({msg: "User deleted successfully"});
 }
 
 export const saveRequest = (req: Request, res: Response) => {
     try {
+        const body = req.body as requestBody;
         const data: Box = {
             id: new Date().toISOString(),
-            name : req.body.name
+            name : body.name
         };
         todo.push(data);
         res.status(201).json({msg: "Data successfully pushed into array"})
